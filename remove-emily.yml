@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Check if user emily exists 
+    user:
+      name: emily 
+      state: absent
+      remove: yes 
