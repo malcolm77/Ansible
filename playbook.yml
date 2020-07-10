@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+    - name: check if user malcolm exists
+      command: "id malcolm" 
