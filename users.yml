@@ -1,0 +1,8 @@
+---
+- name: create users
+  hosts: test
+  become: yes
+  tasks:
+    - include: anne.yml
+    - include: emily.yml
+    - include: malcolm.yml

@@ -1,10 +1,8 @@
 ---
-- hosts: all
-  become: yes
-  tasks:
-  - name: Check if user emily exists 
-    user:
-      name: emily 
-      password: $6$mysecretsalt$vXgqkfXsO4N3htfImzST63v6YNSyenRf14iX7LdMBflnZnx68hIb.Kp8Ni99AhkpsY0IJmUu4f9EExmkYLcdz0
-      state: present
-      create_home: yes
+- name: Check if user emily exists 
+  user:
+    name: emily 
+    state: present
+    create_home: yes
+- name: set passwd
+  command: echo Nimbus2k | passwd emily --stdin
