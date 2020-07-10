@@ -1,8 +1,15 @@
 
 Create new repo and add remote repo
 
+
 1) create a local git repo
 $ git init
+ 
+1.5) Save username and password for github
+$ git config credential.helper store
+$ git push http://example.com/repo.git
+Username: <type your username>
+Password: <type your password>
 
 2) Add all the files in the currect folder
 $ git add *
