@@ -1,4 +1,5 @@
 ---
-- hosts: all
+- hosts: test
+  remote_user: root
   tasks:
     - ping:

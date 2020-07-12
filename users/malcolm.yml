@@ -1,0 +1,7 @@
+---
+- name: Check if user malcolm exists 
+  user:
+    name: malcolm 
+    state: present
+- name: set malcolms password
+  command: echo P@ssw0rd | passwd malcolm --stdin

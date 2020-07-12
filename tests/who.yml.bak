@@ -1,0 +1,6 @@
+---
+- hosts: test
+  tasks:
+    - name: check user
+      remote_user: root
+      shell: whoami
