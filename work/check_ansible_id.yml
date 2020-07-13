@@ -1,0 +1,11 @@
+---
+# This playbook is meant to check the id of the ansible user 
+# testing, while i learn how to use ansible
+
+- name: Views id of ansible user 
+  hosts: prod_mbss
+  become: true
+  vars:
+     contents: "{{ lookup('file', '/etc/resolv.conf') }}"
+  tasks:
+     - debug: msg="The value of /etc/resolv.conf is {{ contents }}"

@@ -1,0 +1,11 @@
+---
+# This playbook will install gimp
+
+- name: Tests ansible by installing a software package
+  hosts: pdc_dc
+  become: true
+  tasks:
+  - name: Install gimp
+    yum:
+      name: gimp 
+      state: absent

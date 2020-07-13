@@ -1,0 +1,33 @@
+---
+- hosts: squid 
+  become: yes
+  tasks:
+  - name: Copy Splunk installer
+    copy:
+      src: /home/svc_ansible/splunk_deploy/splunkforwarder-8.0.3-a6754d8441bf-linux-2.6-x86_64.rpm
+      dest: /tmp
+      owner: svc_ansible
+      group: svc_ansible
+      mode: '0644' 
+  - name: Install Splunk Forwarder
+    yum:
+      name: /tmp/splunkforwarder-8.0.3-a6754d8441bf-linux-2.6-x86_64.rpm
+      state: present
+  - name: Copy server.conf file
+    copy:
+      src: /home/svc_ansible/splunk_deploy/server.conf
+      dest: /opt/splunkforwarder/etc/system/local/server.conf 
+      owner: svc_ansible
+      group: svc_ansible
+      mode: '0644' 
+  - name: Copy deploymentclient.conf file
+    copy:
+      src: /home/svc_ansible/splunk_deploy/deploymentclient.conf
+      dest: /opt/splunkforwarder/etc/system/local/deploymentclient.conf
+      owner: svc_ansible
+      group: svc_ansible
+      mode: '0644' 
+  - name: start forwarder
+    command: /opt/splunkforwarder/bin/splunk start --accept-license --no-prompt --seed-password 2c1487077989ed
+  - name: enable forwarder
+    command: /opt/splunkforwarder/bin/splunk enable boot-start

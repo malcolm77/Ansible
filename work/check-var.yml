@@ -1,0 +1,7 @@
+---
+- hosts: PBIAS-PDC-PNS02 
+  tasks:
+  - name: check size of var
+    command: df -h 
+    args:
+      grep: | grep var$

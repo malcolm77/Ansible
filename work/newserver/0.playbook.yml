@@ -1,0 +1,10 @@
+# This playbook links to other playbooks to which do the initial configution of a server
+---
+- name: Setup a new server
+  hosts: new
+  become: yes
+  tasks:
+    - include: 1.repo.yml
+    - include: 2.splunk.yml
+    - include: 3.tenable.yml
+    - include: 4.timezone.yml

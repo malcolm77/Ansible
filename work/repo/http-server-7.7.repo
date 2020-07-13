@@ -1,0 +1,5 @@
+[RHEL_7.7_DVD_Contents]
+name=Red Hat 7.7 DVD packages - HTTP Server
+baseurl=http://10.245.2.240/rhel/7.7/
+gpgcheck=0
+enabled=1

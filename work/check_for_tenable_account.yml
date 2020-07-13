@@ -1,0 +1,9 @@
+---
+# This playbook is meant to check if the svc_tenablesc exists
+# testing, while i learn how to use ansible
+
+- name: Checks is svc_tenablesc account exits 
+  hosts: all
+  with_items:
+  - svc_tenablesc
+  command: grep {{ item }} -q /etc/passwd

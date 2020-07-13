@@ -1,0 +1,11 @@
+---
+# This playbook will install httpd
+
+- name: Tests ansible by installing a software package
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Install httpd
+    yum:
+      name: httpd 
+      state: present

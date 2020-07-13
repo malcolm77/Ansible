@@ -1,0 +1,5 @@
+---
+- hosts: fixing 
+  become: yes
+  tasks:
+  - ping:

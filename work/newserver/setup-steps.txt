@@ -1,0 +1,13 @@
+
+1. Run the following commands on the new server(s)
+   # useradd G wheel svc_ansbile
+   # passwd svc_ansible
+
+2. Check that the AllowUsers line is commented out in /etc/ssh/sshd_config
+   Note: if you have to comment it out, restart sshd (systemctl restart sshd)
+
+3. From this server run this command, answer yes and enter the password when required
+   $ ssh-copy-id svc_ansbile@<new_server>
+
+4. Run the setup playbook, enter the svc_ansible password when prompted
+   $ ansible-playbook 0.playbook.yml -K
