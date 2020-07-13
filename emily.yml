@@ -1,8 +1,0 @@
----
-- name: Check if user emily exists 
-  user:
-    name: emily 
-    state: present
-    create_home: yes
-- name: set passwd
-  command: echo Nimbus2k | passwd emily --stdin
