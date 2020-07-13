@@ -1,5 +1,5 @@
 ---
-- hosts: pbidr-sdc-pns100
+- hosts: server100
   become: yes
   tasks:
   - name: Copy veeam kmod package to server 

@@ -1,5 +1,5 @@
 ---
-- hosts: PBIAS-PDC-PNS02 
+- hosts: server01 
   tasks:
   - name: check size of var
     command: df -h 
