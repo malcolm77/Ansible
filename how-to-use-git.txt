@@ -33,3 +33,14 @@ $ git commit -m "added update script"
 
 8) push the changes to github
 $ git push --set-upstream github master
+
+--- How to undo chanages BEFORE A COMMIT ----
+
+Use this command to see which files have changed
+$ git diff
+
+Then use the checkout command to replace the file with the changes you want to undo
+$ git checkout <filename> 
+
+NOTE : this needs to happen BEFORE you do a commit.
+
